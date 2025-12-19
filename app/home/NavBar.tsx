@@ -17,59 +17,63 @@ import {
 import { useIsMobile } from "@/app/hooks/use-mobile"
 import Image from "next/image"
 
-const components: { title: string; href: string; description: string }[] = [
+const Services: { title: string; href: string; description: string }[] = [
     {
-        title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
+        title: "Website Development",
+        href: "",
         description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
+            "Building responsive and functional websites to enhance your online presence.",
     },
     {
-        title: "Hover Card",
-        href: "/docs/primitives/hover-card",
+        title: "Mobile App Development",
+        href: "",
         description:
-            "For sighted users to preview content available behind a link.",
+            "Creating user-friendly mobile applications for both iOS and Android platforms.",
     },
     {
-        title: "Progress",
-        href: "/docs/primitives/progress",
+        title: "UI/UX Design",
+        href: "",
         description:
             "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
     },
     {
-        title: "Scroll-area",
-        href: "/docs/primitives/scroll-area",
-        description: "Visually or semantically separates content.",
+        title: "Digital Marketing",
+        href: "",
+        description: "Promoting products or services through digital channels.",
     },
     {
-        title: "Tabs",
-        href: "/docs/primitives/tabs",
+        title: "Total online presence",
+        href: "",
         description:
-            "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+            "A comprehensive approach to managing and improving your online presence across various platforms.",
     },
-    {
-        title: "Tooltip",
-        href: "/docs/primitives/tooltip",
-        description:
-            "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-    },
+
 ]
 
 export default function NavBar() {
     const isMobile = useIsMobile()
 
     return (
-        <div className="flex items-center justify-evenly w-full px-4 py-2 bg-white shadow-md">
+        <div className="z-50 relative flex items-center justify-evenly w-full px-4 bg-white shadow-md">
             {/* Logo on the left */}
-            <Link href="/" className="flex items-center">
-                <Image
-                    src="/logo.png" // put your logo in public folder
-                    alt="Logo"
-                    width={120}
-                    height={40}
-                />
-                <span className="text-green-500 font-bold text-[12px]">Infomation Technology</span>
-            </Link>
+            <div className="">
+                <Link href="/" className="flex items-center">
+                    <div className="border border-green-500 rounded-md p-1  m-2">
+                        <Image
+                            src="/logo.png"
+                            alt="Logo"
+                            width={120}
+                            height={40}
+                        />
+                    </div>
+                    <div>
+                        <span className="text-green-500 font-bold text-[12px]">Infomation Technology</span>
+                        <h1 className="absolute text-xs ">+880-1643989705</h1>
+                    </div>
+
+                </Link>
+
+            </div>
             <NavigationMenu viewport={isMobile} className="flex justify-center">
 
                 <NavigationMenuList className="flex-wrap">
@@ -107,10 +111,20 @@ export default function NavBar() {
           </NavigationMenuContent> */}
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger>Product</NavigationMenuTrigger>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <Link href="/docs">About us</Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <Link href="/docs">Products</Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className=" grid gap-2 sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                                {components.map((component) => (
+                                {Services.map((component) => (
                                     <ListItem
                                         key={component.title}
                                         title={component.title}
@@ -130,26 +144,26 @@ export default function NavBar() {
                                 <li>
                                     <NavigationMenuLink asChild>
                                         <Link href="#">
-                                            <div className="font-medium">Components</div>
-                                            <div className="text-muted-foreground">
+                                            <div className="font-medium">Touch world</div>
+                                            {/* <div className="text-muted-foreground">
                                                 Browse all components in the library.
-                                            </div>
+                                            </div> */}
                                         </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
                                         <Link href="#">
-                                            <div className="font-medium">Documentation</div>
-                                            <div className="text-muted-foreground">
+                                            <div className="font-medium">Okay Hospitality</div>
+                                            {/* <div className="text-muted-foreground">
                                                 Learn how to use the library.
-                                            </div>
+                                            </div> */}
                                         </Link>
                                     </NavigationMenuLink>
                                     <NavigationMenuLink asChild>
                                         <Link href="#">
-                                            <div className="font-medium">Blog</div>
-                                            <div className="text-muted-foreground">
+                                            <div className="font-medium">Jazirat Al Aibis Al Khalis</div>
+                                            {/* <div className="text-muted-foreground">
                                                 Read our latest blog posts.
-                                            </div>
+                                            </div> */}
                                         </Link>
                                     </NavigationMenuLink>
                                 </li>
@@ -179,6 +193,11 @@ export default function NavBar() {
                     <NavigationMenuItem>
                         <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                             <Link href="/docs">Blog</Link>
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                            <Link href="/docs">Career</Link>
                         </NavigationMenuLink>
                     </NavigationMenuItem>
 
