@@ -67,7 +67,7 @@ export default function NavBar() {
                         />
                     </div>
                     <div>
-                        <span className="text-green-500 font-bold text-[12px]">Infomation Technology</span>
+                        <span className="text-green-500 text-[12px]">Infomation Technology</span>
                         <h1 className="absolute text-xs ">+880-1643989705</h1>
                     </div>
 
