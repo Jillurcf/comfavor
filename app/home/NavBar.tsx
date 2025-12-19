@@ -60,7 +60,7 @@ export default function NavBar() {
                 <Link href="/" className="flex items-center">
                     <div className="border border-green-500 rounded-md p-1  m-2">
                         <Image
-                            src="/logo.png"
+                            src="/comfavorLog.png"
                             alt="Logo"
                             width={120}
                             height={40}
