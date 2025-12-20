@@ -156,7 +156,7 @@ export default function NavBar() {
                                         key={service.title}
                                         title={service.title}
                                         href={service.href}
-                                        className="border-none hover:border-none"
+                                        
                                     >
                                         {service.description}
                                     </ListItem>
