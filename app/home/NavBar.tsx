@@ -109,33 +109,7 @@ export default function NavBar() {
                         </NavigationMenuLink>
                     </NavigationMenuItem>
 
-                    {/* <NavigationMenuItem>
-                        <NavigationMenuTrigger
-                            className={`
-      ${navigationMenuTriggerStyle()}
-      ${pathname.startsWith("/services")
-                                    ? "text-(--primary-color) bg-gray-100"
-                                    : "hover:text-(--primary-color)"
-                                }
-    `}
-                        >
-                            Services
-                        </NavigationMenuTrigger>
-
-                        <NavigationMenuContent>
-                            <ul className="grid gap-3 p-4 sm:w-[400px] md:w-[500px] md:grid-cols-2">
-                                {Services.map((service) => (
-                                    <ListItem
-                                        key={service.title}
-                                        title={service.title}
-                                        href={service.href}
-                                    >
-                                        {service.description}
-                                    </ListItem>
-                                ))}
-                            </ul>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem> */}
+                  
                     <NavigationMenuItem>
                         <NavigationMenuTrigger
                             className={`

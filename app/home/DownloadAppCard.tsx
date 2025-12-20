@@ -50,7 +50,7 @@ export default function DownloadAppCard() {
         </a>
       </div> */}
       <Button 
-      onClick={() => window.location.href = 'https://example.com/download'}
+      onClick={() => window.location.href = 'https://drive.google.com/file/d/1W8SvAWuVCMX8WGTWjswhH6xOUfiIFyRb/view?usp=drive_link'}
       className="mt-4 w-full bg-(--primary-color) rounded-2xl text-white hover:bg-gray-800">
         Download
       </Button>
