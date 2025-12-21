@@ -8,6 +8,11 @@ export default function DownloadAppCard() {
   const [visible, setVisible] = useState(true);
 
   if (!visible) return null;
+const callNumber = () => {
+  window.location.href = "tel:+8801643989705";
+};
+
+
 
   return (
     <div className="fixed bottom-6 right-6 z-50 w-72 rounded-2xl bg-white shadow-2xl border border-gray-100 p-4">
@@ -50,10 +55,15 @@ export default function DownloadAppCard() {
         </a>
       </div> */}
       <Button 
-      onClick={() => window.location.href = 'https://drive.google.com/file/d/1W8SvAWuVCMX8WGTWjswhH6xOUfiIFyRb/view?usp=drive_link'}
+      onClick={callNumber}
       className="mt-4 w-full bg-(--primary-color) rounded-2xl text-white hover:bg-gray-800">
         Download
       </Button>
+      {/* <Button 
+      onClick={() => window.location.href = 'https://drive.google.com/file/d/1W8SvAWuVCMX8WGTWjswhH6xOUfiIFyRb/view?usp=drive_link'}
+      className="mt-4 w-full bg-(--primary-color) rounded-2xl text-white hover:bg-gray-800">
+        Download
+      </Button> */}
 
     </div>
   );
