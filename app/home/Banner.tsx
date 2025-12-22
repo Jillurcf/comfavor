@@ -73,17 +73,15 @@ import Image from "next/image"
 const Banner: React.FC = () => {
   const desktopImages = [
     "/website.jpg",
-  "/BannerImg_2.jpg",
-  "/BannerImg_3.jpg",
-  "/digitalMarketing.jpg",
-]
+    "/BannerImg_2.jpg",
+    "/digitalMarketing.jpg",
+  ]
 
-const mobileImages = [
+  const mobileImages = [
     "/website.jpg",
-  "/BannerImg_2.jpg",
-  "/BannerImg_3.jpg",
-  "/digitalMarketing.jpg",
-]
+    "/BannerImg_2.jpg",
+    "/digitalMarketing.jpg",
+  ]
 
   return (
     <>
