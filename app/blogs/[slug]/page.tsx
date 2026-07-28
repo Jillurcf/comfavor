@@ -41,11 +41,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post || post.draft) notFound();
@@ -132,9 +128,7 @@ export default async function BlogPostPage({
 
         <div className="rounded-2xl bg-green-50 p-8 text-center">
           <h2 className="mb-2 text-xl font-bold text-gray-900">Need Help with Your Project?</h2>
-          <p className="mb-6 text-gray-600">
-            Contact Comfavor today for a free consultation.
-          </p>
+          <p className="mb-6 text-gray-600">Contact Comfavor today for a free consultation.</p>
           <Button asChild>
             <Link href="/contact">Get in Touch</Link>
           </Button>

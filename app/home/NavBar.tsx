@@ -15,13 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
-import {
-  Sheet,
-  SheetTitle,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-} from '@/components/ui/sheet';
+import { Sheet, SheetTitle, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 const Services = [
   {
@@ -97,7 +91,11 @@ export default function NavBar() {
                       ? 'bg-gray-100 text-[var(--primary-color)]'
                       : 'hover:text-[var(--primary-color)]'
                   }`}
-                  aria-current={pathname === '/products' || pathname.startsWith('/products/') ? 'page' : undefined}
+                  aria-current={
+                    pathname === '/products' || pathname.startsWith('/products/')
+                      ? 'page'
+                      : undefined
+                  }
                 >
                   Products
                 </Link>
@@ -133,7 +131,9 @@ export default function NavBar() {
                 <Link
                   href="/blogs"
                   className={linkClass('/blogs')}
-                  aria-current={pathname === '/blogs' || pathname.startsWith('/blogs/') ? 'page' : undefined}
+                  aria-current={
+                    pathname === '/blogs' || pathname.startsWith('/blogs/') ? 'page' : undefined
+                  }
                 >
                   Blogs
                 </Link>
@@ -143,7 +143,9 @@ export default function NavBar() {
                 <Link
                   href="/careers"
                   className={linkClass('/careers')}
-                  aria-current={pathname === '/careers' || pathname.startsWith('/careers/') ? 'page' : undefined}
+                  aria-current={
+                    pathname === '/careers' || pathname.startsWith('/careers/') ? 'page' : undefined
+                  }
                 >
                   Careers
                 </Link>
@@ -153,7 +155,9 @@ export default function NavBar() {
                 <Link
                   href="/contact"
                   className={linkClass('/contact')}
-                  aria-current={pathname === '/contact' || pathname.startsWith('/contact/') ? 'page' : undefined}
+                  aria-current={
+                    pathname === '/contact' || pathname.startsWith('/contact/') ? 'page' : undefined
+                  }
                 >
                   Contact
                 </Link>

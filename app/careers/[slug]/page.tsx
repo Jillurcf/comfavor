@@ -34,11 +34,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function CareerDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function CareerDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const job = getJobBySlug(slug);
   if (!job) notFound();

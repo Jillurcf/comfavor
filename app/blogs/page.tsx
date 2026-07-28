@@ -5,9 +5,9 @@ import { buildMetadata, routeMetadata } from '@/lib/constants/seo';
 
 export const metadata: Metadata = buildMetadata(routeMetadata.blog);
 
-const publishedPosts = posts.filter((p) => !p.draft).sort(
-  (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-);
+const publishedPosts = posts
+  .filter((p) => !p.draft)
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
 export default function BlogsPage() {
   return (

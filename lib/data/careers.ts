@@ -194,9 +194,9 @@ export const jobs: Job[] = [
   },
 ];
 
-const publishedJobs = jobs.filter((j) => new Date(j.closingAt) > new Date()).sort(
-  (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-);
+const publishedJobs = jobs
+  .filter((j) => new Date(j.closingAt) > new Date())
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
 export function getJobBySlug(slug: string): Job | undefined {
   return jobs.find((j) => j.slug === slug);

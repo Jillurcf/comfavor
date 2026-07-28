@@ -6,14 +6,20 @@ import { jobs } from '@/lib/data/careers';
 import { SITE_URL } from '@/lib/constants/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['/', '/aboutus', '/products', '/services', '/contact', '/blogs', '/careers'].map(
-    (route) => ({
-      url: `${SITE_URL}${route}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: route === '/' ? 1.0 : 0.8,
-    }),
-  );
+  const staticRoutes = [
+    '/',
+    '/aboutus',
+    '/products',
+    '/services',
+    '/contact',
+    '/blogs',
+    '/careers',
+  ].map((route) => ({
+    url: `${SITE_URL}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: route === '/' ? 1.0 : 0.8,
+  }));
 
   const serviceRoutes = services.map((service) => ({
     url: `${SITE_URL}/services/${service.slug}`,

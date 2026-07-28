@@ -57,7 +57,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'While Facebook and Instagram are popular, they have limitations. Your social media page is rented land — you don\'t control the algorithm, the terms of service, or how your content reaches your audience. A website is your digital property.',
+        text: "While Facebook and Instagram are popular, they have limitations. Your social media page is rented land — you don't control the algorithm, the terms of service, or how your content reaches your audience. A website is your digital property.",
       },
       {
         type: 'list',
@@ -102,7 +102,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'quote',
-        text: 'Your website is the digital storefront of your business. In 2026, if you\'re not online, you\'re invisible to a growing majority of your potential customers.',
+        text: "Your website is the digital storefront of your business. In 2026, if you're not online, you're invisible to a growing majority of your potential customers.",
         author: 'Comfavor Team',
       },
     ],
@@ -121,7 +121,7 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'Bangladesh\'s mobile app market is one of the fastest-growing in South Asia. With smartphone penetration crossing 60% and affordable data plans, more businesses than ever are investing in mobile applications to reach their customers.',
+        text: "Bangladesh's mobile app market is one of the fastest-growing in South Asia. With smartphone penetration crossing 60% and affordable data plans, more businesses than ever are investing in mobile applications to reach their customers.",
       },
       {
         type: 'heading',
@@ -280,7 +280,7 @@ export const posts: BlogPost[] = [
     content: [
       {
         type: 'paragraph',
-        text: 'Small and medium enterprises (SMEs) form the backbone of Bangladesh\'s economy, contributing over 25% to the GDP. However, many SMEs struggle to establish a strong digital presence due to limited budgets and expertise. The good news is that effective digital marketing doesn\'t require a Fortune 500 budget.',
+        text: "Small and medium enterprises (SMEs) form the backbone of Bangladesh's economy, contributing over 25% to the GDP. However, many SMEs struggle to establish a strong digital presence due to limited budgets and expertise. The good news is that effective digital marketing doesn't require a Fortune 500 budget.",
       },
       {
         type: 'heading',
@@ -346,7 +346,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'One advantage SMEs have over larger competitors is agility. By tracking the right metrics, you can quickly identify what works and double down on it, while cutting what doesn\'t.',
+        text: "One advantage SMEs have over larger competitors is agility. By tracking the right metrics, you can quickly identify what works and double down on it, while cutting what doesn't.",
       },
       {
         type: 'list',
@@ -393,7 +393,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: 'paragraph',
-        text: 'Next.js solves many of the challenges that come with building React applications in production. Here are the key reasons we choose Next.js for our clients\' projects:',
+        text: "Next.js solves many of the challenges that come with building React applications in production. Here are the key reasons we choose Next.js for our clients' projects:",
       },
       {
         type: 'list',

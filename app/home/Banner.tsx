@@ -1,73 +1,52 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from '@/components/ui/carousel';
-
-const images = ['/website.jpg', '/BannerImg_2.jpg', '/digitalMarketing.jpg'];
+import { Canvas } from '@react-three/fiber';
+import { AdaptiveDpr } from '@react-three/drei';
+import SpotlightScene from '@/components/home/SpotlightScene';
+import Link from 'next/link';
 
 export default function Banner() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!api) return;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [api]);
-
-  React.useEffect(() => {
-    if (!api) return;
-
-    const onSelect = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
-
-    api.on('select', onSelect);
-    return () => {
-      api.off('select', onSelect);
-    };
-  }, [api]);
-
   return (
-    <Carousel setApi={setApi} className="w-full">
-      <div className="sr-only" aria-live="polite" aria-atomic="true">
-        Slide {current + 1} of {images.length}
+    <section id="section-banner" className="relative w-full min-h-[70vh] md:min-h-[80vh] overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Canvas
+          camera={{ position: [4.6, 2.2, -2.1], fov: 35, near: 0.1, far: 100 }}
+          shadows
+          dpr={[1, 1.5]}
+          gl={{ alpha: false, antialias: true }}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <AdaptiveDpr pixelated />
+          <SpotlightScene />
+        </Canvas>
       </div>
 
-      <CarouselContent>
-        {images.map((src, index) => (
-          <CarouselItem key={index}>
-            <div className="relative h-[40vh] md:h-[60vh] w-full">
-              <Image
-                src={src}
-                alt={`Comfavor banner showing ${src.replace(/^\//, '').replace(/\.\w+$/, '')}`}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="hidden md:flex" />
-      <CarouselNext className="hidden md:flex" />
-    </Carousel>
+      <div className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-t from-gray-900/70 via-gray-900/20 to-transparent" />
+
+      <div className="pointer-events-none relative z-10 flex min-h-[70vh] md:min-h-[80vh] flex-col items-center justify-center px-4 text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl">
+          Comfavor
+        </h1>
+        <p className="mt-4 max-w-2xl text-lg text-white/80 md:text-xl">
+          We build the digital backbone for Bangladeshi businesses — websites, mobile apps, design,
+          and marketing.
+        </p>
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row pointer-events-auto">
+          <Link
+            href="/contact"
+            className="rounded-xl bg-(--primary-color) px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl"
+          >
+            Get a Free Consultation
+          </Link>
+          <Link
+            href="/services"
+            className="rounded-xl border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition-all hover:bg-white/20"
+          >
+            Our Services
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

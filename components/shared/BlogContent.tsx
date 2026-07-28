@@ -5,9 +5,7 @@ function ContentHeading({ block }: { block: BlogContentBlock & { type: 'heading'
   const Tag = `h${block.level}` as const;
   const sizes = { 1: 'text-3xl', 2: 'text-2xl', 3: 'text-xl' };
   return (
-    <Tag className={`mb-4 mt-8 font-bold text-gray-900 ${sizes[block.level]}`}>
-      {block.text}
-    </Tag>
+    <Tag className={`mb-4 mt-8 font-bold text-gray-900 ${sizes[block.level]}`}>{block.text}</Tag>
   );
 }
 
@@ -34,9 +32,7 @@ function ContentImage({ block }: { block: BlogContentBlock & { type: 'image' } }
       <div className="relative h-64 w-full overflow-hidden rounded-lg">
         <Image src={block.src} alt={block.alt} fill className="object-cover" />
       </div>
-      {block.caption && (
-        <p className="mt-2 text-center text-sm text-gray-500">{block.caption}</p>
-      )}
+      {block.caption && <p className="mt-2 text-center text-sm text-gray-500">{block.caption}</p>}
     </div>
   );
 }

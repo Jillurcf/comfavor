@@ -171,7 +171,7 @@ export default function JobApplicationForm({
             'w-full resize-y rounded-md border px-3 py-2 text-sm shadow-xs outline-none transition-colors focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
             getFieldError('coverLetter') ? 'border-red-500' : 'border-gray-300',
           )}
-          placeholder="Tell us why you&apos;re a great fit for this role..."
+          placeholder="Tell us why you're a great fit for this role..."
           required
         />
         <FieldError error={getFieldError('coverLetter')} />

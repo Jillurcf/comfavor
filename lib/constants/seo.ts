@@ -181,8 +181,7 @@ export const routeMetadata: Record<string, { title: string; description: string;
   },
   careerPost: {
     title: 'Job Opening — Comfavor Careers',
-    description:
-      'View details and apply for open positions at Comfavor Information Technology.',
+    description: 'View details and apply for open positions at Comfavor Information Technology.',
     path: '/careers',
   },
 };
