@@ -7,31 +7,38 @@ export interface TeamMember {
 
 export const team: TeamMember[] = [
   {
-    name: 'Shahadat Hossain Khan',
-    role: 'CEO & Founder',
+    name: 'Md Shahadat Hossain Khan',
+    role: 'CEO',
     description:
-      "Visionary leader with 15+ years in the IT industry, driving Comfavor's mission to transform Bangladeshi businesses through technology.",
-    avatar: '/team-placeholder.svg',
+      "Visionary leader with over 15 years of experience in the IT industry, leading Comfavor's strategic growth, innovation, and digital transformation initiatives.",
+    avatar: '/Shadat_VAI.png',
   },
   {
-    name: 'Rukaia Islam',
-    role: 'CTO',
+    name: 'Tanim Hasan Mahmud',
+    role: 'Technical Lead',
     description:
-      'Experienced software architect specializing in scalable web and mobile solutions for enterprise clients.',
-    avatar: '/team-placeholder.svg',
+      'Experienced technical leader specializing in software architecture, cloud technologies, and scalable web and mobile application development for enterprise solutions.',
+    avatar: '/Tanim_hasan.jpeg',
   },
   {
     name: 'Eahia Sohel',
     role: 'Lead Designer',
     description:
-      'Creative designer with a passion for user-centered design and building intuitive digital experiences.',
-    avatar: '/team-placeholder.svg',
+      'Creative UI/UX designer dedicated to crafting intuitive, visually engaging, and user-centered digital experiences that enhance usability and brand identity.',
+    avatar: '/Eiahia_Sohel.jpg',
   },
   {
-    name: 'MST Ismot Ara',
+    name: 'Syed Sazidul Hoque',
+    role: 'Product Engineer',
+    description:
+      'Passionate product engineer focused on building reliable, scalable, and high-performance software solutions while delivering exceptional user experiences.',
+    avatar: '/Sajid.jpg',
+  },
+  {
+    name: 'MST Ismoth Ara',
     role: 'Marketing Director',
     description:
-      'Digital marketing strategist with expertise in SEO, social media, and data-driven campaign management.',
-    avatar: '/team-placeholder.svg',
+      'Results-driven marketing strategist with expertise in digital marketing, SEO, brand growth, content strategy, and data-driven customer acquisition campaigns.',
+    avatar: '/Ismoth_Ara.png',
   },
 ];

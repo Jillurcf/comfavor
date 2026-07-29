@@ -3,7 +3,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls, useHelper } from '@react-three/drei';
-import { SpotLightHelper, type SpotLight, Vector3 } from 'three';
+import { SpotLightHelper, type SpotLight, Vector3, CanvasTexture, type Group, Sprite, SpriteMaterial } from 'three';
 
 const COLORS = ['#FF7F00', '#00FF7F', '#7F00FF'] as const;
 
@@ -85,6 +85,111 @@ function AnimatedSpotlight({
   );
 }
 
+type ParticleData = {
+  tex: CanvasTexture;
+  basePos: [number, number, number];
+  scale: number;
+  phase: number;
+  speed: number;
+};
+
+function generateParticles(): ParticleData[] {
+  const symbols = ['</>', '{}', '[]', '#', '⚡', '⌘', '⚙', '★', '⌨', '⎔', '☰', '✦', '⏻', '⊕'];
+  const colors = ['#22c55e', '#FF7F00', '#00FF7F', '#7F00FF', '#60a5fa', '#f472b6', '#fbbf24'];
+  const result: ParticleData[] = [];
+
+  for (let i = 0; i < 30; i++) {
+    const symbol = symbols[i % symbols.length];
+    const color = colors[i % colors.length];
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 128;
+    canvas.height = 128;
+    const ctx = canvas.getContext('2d')!;
+    ctx.clearRect(0, 0, 128, 128);
+
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 14;
+    ctx.fillStyle = color;
+    ctx.globalAlpha = 0.9;
+    ctx.font = 'bold 64px monospace, "Segoe UI Symbol", "Apple Color Emoji", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(symbol, 64, 64);
+
+    const tex = new CanvasTexture(canvas);
+    tex.needsUpdate = true;
+
+    result.push({
+      tex,
+      basePos: [
+        (Math.random() - 0.5) * 7,
+        Math.random() * 4 + 0.2,
+        (Math.random() - 0.5) * 7,
+      ],
+      scale: Math.random() * 0.7 + 0.3,
+      phase: Math.random() * Math.PI * 2,
+      speed: Math.random() * 0.5 + 0.15,
+    });
+  }
+
+  return result;
+}
+
+function TechParticles() {
+  const groupRef = useRef<Group>(null!);
+  const animRef = useRef<ParticleData[]>([]);
+
+  useEffect(() => {
+    const group = groupRef.current;
+    if (!group) return;
+
+    const data = generateParticles();
+    animRef.current = data;
+
+    const sprites: Sprite[] = [];
+
+    for (const d of data) {
+      const material = new SpriteMaterial({
+        map: d.tex,
+        transparent: true,
+        depthWrite: false,
+      });
+      const sprite = new Sprite(material);
+      sprite.position.set(d.basePos[0], d.basePos[1], d.basePos[2]);
+      sprite.scale.set(d.scale, d.scale, d.scale);
+      group.add(sprite);
+      sprites.push(sprite);
+    }
+
+    return () => {
+      sprites.forEach((s) => {
+        group.remove(s);
+        s.material.dispose();
+        (s.material as SpriteMaterial).map?.dispose();
+      });
+      animRef.current = [];
+    };
+  }, []);
+
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    const group = groupRef.current;
+    if (!group) return;
+    const sprites = group.children as Sprite[];
+    const data = animRef.current;
+    for (let i = 0; i < sprites.length; i++) {
+      const d = data[i];
+      if (!d) continue;
+      sprites[i].position.x = d.basePos[0] + Math.sin(t * d.speed + d.phase) * 0.5;
+      sprites[i].position.y = d.basePos[1] + Math.sin(t * d.speed * 0.7 + d.phase + 1.2) * 0.35;
+      sprites[i].position.z = d.basePos[2] + Math.cos(t * d.speed + d.phase) * 0.5;
+    }
+  });
+
+  return <group ref={groupRef} />;
+}
+
 export default function SpotlightScene() {
   return (
     <>
@@ -115,6 +220,7 @@ export default function SpotlightScene() {
           initialPosition={INITIAL_POSITIONS[i]}
         />
       ))}
+      <TechParticles />
     </>
   );
 }
