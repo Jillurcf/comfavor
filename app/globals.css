@@ -127,7 +127,7 @@
 
 /* --- ScrollStack --- */
 .scroll-stack-wrapper {
-  padding-bottom: 30vh;
+  padding-bottom: 0vh;
 }
 
 .scroll-stack-card {
