@@ -1,28 +1,22 @@
 'use client';
 
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { AdaptiveDpr } from '@react-three/drei';
-import SpotlightScene from '@/components/home/SpotlightScene';
+import Hyperspeed from '@/components/home/Hyperspeed';
+import OptionWheel from '@/components/home/OptionWheel';
 import Link from 'next/link';
 
 export default function Banner() {
   return (
-    <section id="section-banner" className="relative w-full min-h-[70vh] md:min-h-[80vh] overflow-hidden">
+    <section id="section-banner" className="relative w-full min-h-[70vh] md:min-h-[80vh] bg-black overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Canvas
-          camera={{ position: [4.6, 2.2, -2.1], fov: 35, near: 0.1, far: 100 }}
-          shadows
-          dpr={[1, 1.5]}
-          gl={{ alpha: false, antialias: true }}
-          style={{ width: '100%', height: '100%' }}
-        >
-          <AdaptiveDpr pixelated />
-          <SpotlightScene />
-        </Canvas>
+        <Hyperspeed />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-t from-gray-900/70 via-gray-900/20 to-transparent" />
+
+      <div className="absolute left-0 top-0 z-[6] h-full w-104">
+        <OptionWheel side="left" />
+      </div>
 
       <div className="pointer-events-none relative z-10 flex min-h-[70vh] md:min-h-[80vh] flex-col items-center justify-center px-4 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl">
