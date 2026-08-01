@@ -19,7 +19,7 @@ export default function Services() {
       </div> */}
 
       <div className="relative z-10 flex flex-col items-center justify-center">
-        <h2 className="mb-10 text-center text-3xl font-bold text-(--primary-color) underline">
+        <h2 className="mb-10 text-center text-3xl font-bold text-(--primary-color) ">
           Our Services
         </h2>
 

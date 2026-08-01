@@ -26,16 +26,16 @@ export default function Banner() {
           We build the digital backbone for Bangladeshi businesses — websites, mobile apps, design,
           and marketing.
         </p>
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row pointer-events-auto">
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row pointer-events-auto ">
           <Link
             href="/contact"
-            className="rounded-xl bg-(--primary-color) px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl"
+            className="rounded-2xl bg-(--primary-color) px-8 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl"
           >
             Get a Free Consultation
           </Link>
           <Link
             href="/services"
-            className="rounded-xl border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition-all hover:bg-white/20"
+            className="rounded-2xl border border-white/30 bg-white/10 px-8 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition-all hover:bg-white/20"
           >
             Our Services
           </Link>
