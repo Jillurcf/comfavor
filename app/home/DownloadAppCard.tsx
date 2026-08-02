@@ -14,7 +14,7 @@ export default function DownloadAppCard() {
   };
 
   return (
-    <div className="fixed bottom-28 md:bottom-6 right-12 md:right-6 z-50 w-72">
+    <div className="fixed bottom-28 md:bottom-6 right-6 z-50 w-72">
       <ElectricBorder
       color="#22c55e"
       borderRadius={16}
