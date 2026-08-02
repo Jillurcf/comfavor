@@ -14,15 +14,15 @@ export default function Banner() {
 
       <div className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-t from-gray-900/70 via-gray-900/20 to-transparent" />
 
-      <div className="absolute left-0 top-0 z-[6] h-full w-104">
+      <div className="absolute left-0 top-0 z-[6] hidden h-full w-104 md:block">
         <OptionWheel side="left" />
       </div>
 
-      <div className="pointer-events-none relative z-10 flex min-h-[70vh] md:min-h-[80vh] flex-col items-center justify-center px-4 text-center">
+      <div className="pointer-events-none relative z-10 flex min-h-[50vh] md:min-h-[80vh] flex-col items-center justify-center px-4 text-center">
         <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl">
           Comfavor
         </h1>
-        <p className="mt-4 max-w-2xl text-lg text-white/80 md:text-xl">
+        <p className="mt-4 max-w-2xl text-white/80 md:text-xl">
           We build the digital backbone for Bangladeshi businesses — websites, mobile apps, design,
           and marketing.
         </p>

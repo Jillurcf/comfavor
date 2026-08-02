@@ -114,6 +114,22 @@ export default function ScrollStack({
       el.style.zIndex = `${i}`;
     });
 
+    const reserveSpace = () => {
+      const wrapper = scrollerRef.current;
+      if (!wrapper || !stackCards.length) return;
+      const vh = window.innerHeight;
+      const stackPx = (parseFloat(stackPosition) / 100) * vh;
+      let maxOverlap = 0;
+      stackCards.forEach((el, i) => {
+        const overlap = el.offsetHeight + stackPx + itemStackDistance * i - vh / 2;
+        if (overlap > maxOverlap) maxOverlap = overlap;
+      });
+      const next = `${Math.max(0, maxOverlap)}px`;
+      if (wrapper.style.paddingBottom !== next) wrapper.style.paddingBottom = next;
+    };
+    reserveSpace();
+    window.addEventListener('resize', reserveSpace);
+
     const valuesCache = lastValuesRef.current;
     let ticking = false;
     const onScroll = () => {
@@ -131,11 +147,12 @@ export default function ScrollStack({
 
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', reserveSpace);
       cancelAnimationFrame(rafRef.current);
       stackCompletedRef.current = false;
       valuesCache.clear();
     };
-  }, [update]);
+  }, [update, itemStackDistance, stackPosition]);
 
   return (
     <div className={className} ref={scrollerRef}>
