@@ -12,6 +12,12 @@ export interface PortfolioProject {
   featured?: boolean;
   tags?: string[];
   image?: string;
+  challenge?: string;
+  solution?: string;
+  results?: string[];
+  technologies?: string[];
+  gallery?: string[];
+  overview?: string;
 }
 
 export const portfolio: PortfolioProject[] = [
@@ -30,6 +36,20 @@ export const portfolio: PortfolioProject[] = [
     featured: true,
     tags: ['UI/UX', 'Frontend', 'Backend'],
     image: '/waymarks.png',
+    gallery: ['/waymarks.png', '/website.jpg'],
+    overview:
+      'Waymarks Agency needed a modern, professional website to showcase their services and establish credibility online. We delivered a full-stack solution from design through deployment.',
+    challenge:
+      'The client needed a clean, conversion-focused website that clearly communicates their agency services while maintaining fast performance and easy content management.',
+    solution:
+      'We designed a user-centric interface in Figma, developed a responsive frontend with modern components, and built a custom backend for content management and contact handling.',
+    results: [
+      'Professional online presence established',
+      'Improved user engagement and contact inquiries',
+      'Fast-loading, mobile-responsive website',
+      'Easy-to-manage content structure',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Tailwind CSS'],
   },
   {
     slug: 'telal-contracting',
@@ -46,6 +66,20 @@ export const portfolio: PortfolioProject[] = [
     featured: true,
     tags: ['Frontend', 'Minimal Backend'],
     image: '/telal-contracting.png',
+    gallery: ['/telal-contracting.png', '/BannerImg_1.jpg'],
+    overview:
+      'Telal Contracting required a professional website to showcase their construction and contracting services to potential clients in the region.',
+    challenge:
+      'They needed a credible online presence with project portfolio display, service listings, and easy contact options without a complex CMS.',
+    solution:
+      'We built a clean, responsive frontend with service pages and a minimal backend for contact form submissions and basic content management.',
+    results: [
+      'Enhanced professional credibility',
+      'Clear presentation of services and projects',
+      'Increased client inquiries',
+      'Mobile-optimized experience',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js'],
   },
   {
     slug: 'amaken-realestate',
@@ -62,6 +96,20 @@ export const portfolio: PortfolioProject[] = [
     featured: true,
     tags: ['E-commerce', 'UI/UX', 'Frontend', 'Backend'],
     image: '/amaken.png',
+    gallery: ['/amaken.png', '/BannerImg_2.jpg'],
+    overview:
+      'Amaken Real Estate needed a comprehensive e-commerce platform to showcase properties, manage listings, and handle client inquiries efficiently.',
+    challenge:
+      'The platform required property cataloging, search and filtering, inquiry management, and a clean user experience for both property seekers and agents.',
+    solution:
+      'We delivered end-to-end design and development - UI/UX in Figma, responsive property listing frontend, and a robust backend for property management and lead capture.',
+    results: [
+      'Complete digital property showcase platform',
+      'Streamlined property browsing and search',
+      'Efficient inquiry and lead management',
+      'Professional brand presence online',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
   },
   {
     slug: 'jazirat-khalis',
@@ -77,6 +125,17 @@ export const portfolio: PortfolioProject[] = [
     priceLabel: '৳20,000',
     tags: ['Frontend'],
     image: '/jazirat.png',
+    gallery: ['/jazirat.png', '/website.jpg'],
+    overview: 'Jazirat Khalis needed a clean, modern website to establish their online presence.',
+    challenge: 'Create a fast, responsive website that presents their brand professionally with minimal complexity.',
+    solution: 'Built a clean frontend with modern design principles, optimized for speed and mobile responsiveness.',
+    results: [
+      'Clean, professional online presence',
+      'Fully responsive across devices',
+      'Fast loading times',
+      'Improved brand visibility',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
   {
     slug: 'touch-world-int',
@@ -92,6 +151,18 @@ export const portfolio: PortfolioProject[] = [
     priceLabel: '৳15,000',
     tags: ['Frontend'],
     image: '/touchworld.png',
+    gallery: ['/touchworld.png', '/digitalMarketing.jpg'],
+    overview:
+      'Touch World International needed a corporate website to showcase their business services and build credibility.',
+    challenge: 'Deliver a professional corporate presence that works well across all devices within budget.',
+    solution: 'Developed a clean, corporate-focused frontend with clear service sections and contact functionality.',
+    results: [
+      'Professional corporate identity online',
+      'Clear service presentation',
+      'Mobile-responsive design',
+      'Enhanced business credibility',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
   {
     slug: 'dent-care',
@@ -107,6 +178,17 @@ export const portfolio: PortfolioProject[] = [
     priceLabel: '৳8,000',
     tags: ['Frontend'],
     image: '/dentcare.png',
+    gallery: ['/dentcare.png', '/BannerImg_1.jpg'],
+    overview: 'Dent Care needed a modern website to showcase dental services and make it easy for patients to get information.',
+    challenge: 'Create a welcoming, professional healthcare website with clear service information and contact details.',
+    solution: 'Built a clean, patient-friendly frontend with service listings, contact information, and responsive design.',
+    results: [
+      'Professional healthcare presence',
+      'Easy access to services and contact info',
+      'Mobile-friendly patient experience',
+      'Improved online visibility',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
   },
 ];
 

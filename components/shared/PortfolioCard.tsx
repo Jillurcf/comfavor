@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { PortfolioProject } from '@/lib/data/portfolio';
 
@@ -25,9 +25,7 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
             <h3 className="mb-2 text-xl font-bold text-(--primary-color)">{project.title}</h3>
-            {project.clientName && (
-              <p className="text-sm text-gray-500">{project.clientName}</p>
-            )}
+            {project.clientName && <p className="text-sm text-gray-500">{project.clientName}</p>}
           </div>
           <span className="rounded-full bg-green-50 px-3 py-1 text-sm font-semibold text-green-700">
             {project.priceLabel}
@@ -58,17 +56,32 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
           ))}
         </div>
 
-        <Button asChild className="w-full">
-          <Link
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2"
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <Button
+            asChild
+            className="flex-1 rounded-xl bg-[var(--primary-color)] text-white hover:bg-green-700"
           >
-            Visit Live Site
-            <ExternalLink className="h-4 w-4" />
-          </Link>
-        </Button>
+            <Link href={`/portfolio/${project.slug}`} className="flex items-center justify-center gap-2">
+              View Case Study
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="flex-1 rounded-xl border-[var(--primary-color)] text-[var(--primary-color)] hover:bg-green-50"
+          >
+            <Link
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2"
+            >
+              Visit Live Site
+              <ExternalLink className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -18,12 +18,7 @@ export default function HomePage() {
         <h1 className="sr-only">Comfavor — IT Services in Bangladesh</h1>
         <Banner />
         <DownloadAppCard />
-        <ScrollStack
-          className="scroll-stack-wrapper"
-          itemStackDistance={8}
-          stackPosition="15%"
-          baseScale={0.92}
-        >
+        <ScrollStack className="scroll-stack-wrapper" itemStackDistance={0} stackPosition="15%">
           <ScrollStackItem>
             <Services />
           </ScrollStackItem>

@@ -132,7 +132,12 @@
 
 .scroll-stack-card {
   width: 100%;
-  position: relative;
+  min-height: 70vh;
+  position: sticky;
+  top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-stack-end {

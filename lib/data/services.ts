@@ -12,6 +12,7 @@ export interface Service {
   longDescription: string;
   process: ServiceProcess[];
   technologies: string[];
+  image?: string;
 }
 
 export const services: Service[] = [
@@ -23,6 +24,7 @@ export const services: Service[] = [
       'We build responsive, high-performance websites and web applications tailored to your business needs.',
     longDescription:
       'From corporate websites to complex web applications, Comfavor delivers modern, scalable solutions using the latest technologies. Our team specializes in React, Next.js, and Node.js to create fast, SEO-friendly, and maintainable web experiences that help Bangladeshi businesses establish a strong online presence.',
+    image: '/web-dev.jpg',
     process: [
       {
         step: 1,
@@ -61,6 +63,7 @@ export const services: Service[] = [
       'We create native-feeling mobile applications for iOS and Android using cutting-edge cross-platform technologies.',
     longDescription:
       'Reach your customers on every device with custom mobile applications. Comfavor builds cross-platform apps using React Native and Flutter, delivering native performance and seamless user experiences across iOS and Android from a single codebase. We handle everything from concept to App Store and Google Play submission.',
+    image: '/mobile-app.jpg',
     process: [
       {
         step: 1,
@@ -93,11 +96,12 @@ export const services: Service[] = [
   {
     slug: 'uiux',
     title: 'UI/UX Design',
-    tagline: 'User-focused design',
+    tagline: 'User-centered design',
     description:
       'We design intuitive, accessible, and beautiful interfaces that delight users and drive engagement.',
     longDescription:
-      "Great design is the difference between a product users tolerate and one they love. Comfavor's design team follows a user-centered approach, creating wireframes, prototypes, and visual designs that are both beautiful and functional. We focus on usability, accessibility, and conversion optimization for Bangladeshi businesses.",
+      'Great design is more than aesthetics — it is about solving problems. Our UI/UX team creates user-centered designs through research, wireframing, prototyping, and testing. We ensure your digital products are not only beautiful but also intuitive and accessible to all users.',
+    image: '/uiux-design.jpg',
     process: [
       {
         step: 1,
@@ -137,11 +141,12 @@ export const services: Service[] = [
   {
     slug: 'marketing',
     title: 'Digital Marketing',
-    tagline: 'Grow your business online',
+    tagline: 'Grow your online presence',
     description:
-      'We help Bangladeshi businesses reach their target audience through strategic digital marketing campaigns.',
+      'We help businesses build brand awareness and generate leads through data-driven digital marketing strategies.',
     longDescription:
-      "Comfavor's digital marketing services help you build brand awareness, generate leads, and grow your online presence. From SEO to social media marketing, we create data-driven strategies that deliver measurable results. Our team stays current with the latest digital marketing trends to maximize your ROI.",
+      'In a competitive digital landscape, visibility matters. Our digital marketing services include search engine optimization (SEO), social media marketing, content marketing, and paid advertising. We create data-driven strategies tailored to the Bangladeshi market to help you reach your target audience and grow your business.',
+    image: '/digital-marketing.jpg',
     process: [
       {
         step: 1,
