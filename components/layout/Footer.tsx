@@ -5,6 +5,7 @@ const footerNav = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/aboutus' },
   { label: 'Products', href: '/products' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Services', href: '/services' },
   { label: 'Blog', href: '/blogs' },
   { label: 'Careers', href: '/careers' },

@@ -184,4 +184,10 @@ export const routeMetadata: Record<string, { title: string; description: string;
     description: 'View details and apply for open positions at Comfavor Information Technology.',
     path: '/careers',
   },
+  portfolio: {
+    title: 'Portfolio — Comfavor',
+    description:
+      "Explore Comfavor's completed client projects across web development, UI/UX design, e-commerce, and more. See what we've built.",
+    path: '/portfolio',
+  },
 };

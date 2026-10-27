@@ -37,6 +37,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/aboutus' },
   { label: 'Products', href: '/products' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Services', href: '/services' },
   { label: 'Blogs', href: '/blogs' },
   { label: 'Careers', href: '/careers' },
@@ -118,6 +119,9 @@ export default function NavBar() {
                 </MobileLink>
                 <MobileLink href="/products" pathname={pathname} onNav={() => setOpen(false)}>
                   Products
+                </MobileLink>
+                <MobileLink href="/portfolio" pathname={pathname} onNav={() => setOpen(false)}>
+                  Portfolio
                 </MobileLink>
 
                 {/* Services Group */}
