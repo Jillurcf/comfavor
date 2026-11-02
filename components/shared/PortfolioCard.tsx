@@ -27,9 +27,11 @@ export default function PortfolioCard({ project }: PortfolioCardProps) {
             <h3 className="mb-2 text-xl font-bold text-(--primary-color)">{project.title}</h3>
             {project.clientName && <p className="text-sm text-gray-500">{project.clientName}</p>}
           </div>
-          <span className="rounded-full bg-green-50 px-3 py-1 text-sm font-semibold text-green-700">
-            {project.priceLabel}
-          </span>
+          {project.priceLabel && (
+            <span className="rounded-full bg-green-50 px-3 py-1 text-sm font-semibold text-green-700">
+              {project.priceLabel}
+            </span>
+          )}
         </div>
 
         <p className="mb-4 text-sm leading-relaxed text-gray-600">{project.shortDescription}</p>

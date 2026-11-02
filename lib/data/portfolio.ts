@@ -7,8 +7,8 @@ export interface PortfolioProject {
   services: string[];
   shortDescription: string;
   description: string;
-  price: number;
-  priceLabel: string;
+  price?: number;
+  priceLabel?: string;
   featured?: boolean;
   tags?: string[];
   image?: string;
@@ -163,6 +163,21 @@ export const portfolio: PortfolioProject[] = [
       'Enhanced business credibility',
     ],
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+  },
+  {
+    slug: 'gharerkhabar',
+    title: 'GharerKhabar',
+    clientName: 'GharerKhabar',
+    url: 'https://www.gharerkhabar.net/',
+    category: ['Cloud Kitchen', 'Food & Beverage'],
+    services: ['Web Platform'],
+    shortDescription: 'A digital platform for GharerKhabar cloud kitchen business.',
+    description:
+      'A completed cloud kitchen platform project for GharerKhabar, built to support its online presence.',
+    price: 500000,
+    priceLabel: '৳500,000',
+    image: '/Portfolio/gharerkhabar.png',
+    gallery: ['/Portfolio/gharerkhabar.png'],
   },
   {
     slug: 'dent-care',

@@ -8,7 +8,7 @@ import Link from 'next/link';
 export const metadata: Metadata = buildMetadata(routeMetadata.portfolio);
 
 export default function PortfolioPage() {
-  const totalValue = portfolio.reduce((sum, project) => sum + project.price, 0);
+  const totalValue = portfolio.reduce((sum, project) => sum + (project.price ?? 0), 0);
 
   return (
     <div>
@@ -33,10 +33,10 @@ export default function PortfolioPage() {
               <p className="text-3xl font-bold text-(--primary-color)">
                 ৳{(totalValue / 1000).toFixed(0)}K+
               </p>
-              <p className="mt-2 text-sm text-gray-600">Project Value</p>
+              <p className="mt-2 text-sm text-gray-600">Known Project Value</p>
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-lg">
-              <p className="text-3xl font-bold text-(--primary-color)">6</p>
+              <p className="text-3xl font-bold text-(--primary-color)">7</p>
               <p className="mt-2 text-sm text-gray-600">Happy Clients</p>
             </div>
             <div className="rounded-2xl bg-white p-6 text-center shadow-lg">

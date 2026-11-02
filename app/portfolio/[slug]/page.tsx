@@ -92,9 +92,11 @@ export default async function PortfolioDetailPage({ params }: Props) {
               </div>
 
               <div className="mb-6 flex items-center gap-4">
-                <span className="rounded-full bg-white px-4 py-2 text-lg font-bold text-(--primary-color) shadow">
-                  {project.priceLabel}
-                </span>
+                {project.priceLabel && (
+                  <span className="rounded-full bg-white px-4 py-2 text-lg font-bold text-(--primary-color) shadow">
+                    {project.priceLabel}
+                  </span>
+                )}
                 <Button asChild>
                   <Link href={project.url} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
@@ -176,10 +178,12 @@ export default async function PortfolioDetailPage({ params }: Props) {
                 </div>
               )}
 
-              <div className="rounded-2xl bg-green-50 p-6">
-                <h3 className="mb-2 text-lg font-semibold text-(--primary-color)">Project Value</h3>
-                <p className="text-2xl font-bold text-green-700">{project.priceLabel}</p>
-              </div>
+              {project.priceLabel && (
+                <div className="rounded-2xl bg-green-50 p-6">
+                  <h3 className="mb-2 text-lg font-semibold text-(--primary-color)">Project Value</h3>
+                  <p className="text-2xl font-bold text-green-700">{project.priceLabel}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

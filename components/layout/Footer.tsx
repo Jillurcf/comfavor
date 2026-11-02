@@ -13,8 +13,16 @@ const footerNav = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: 'https://facebook.com/comfavor' },
-  { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/comfavor' },
+  {
+    icon: Facebook,
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=100085216063694',
+  },
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/comfavor/?viewAsMember=true',
+  },
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/8801910336341' },
 ];
 
